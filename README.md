@@ -1,7 +1,6 @@
 # prakhartron.github.io
 My Projects
----
----
+
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 <head>
