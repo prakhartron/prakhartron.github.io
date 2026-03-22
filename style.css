@@ -1,0 +1,231 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f8e9ee;
+  color: #4f6072;
+}
+
+.page {
+  width: 100%;
+}
+
+/* HERO */
+.hero {
+  background: #f7dde3;
+  text-align: center;
+  padding: 95px 24px 110px;
+}
+
+.tagline {
+  margin: 0 0 28px;
+  font-size: 17px;
+  letter-spacing: 7px;
+  color: #f43f5e;
+  font-weight: 500;
+}
+
+.hero-title {
+  margin: 0;
+  font-size: 76px;
+  line-height: 1.05;
+  font-weight: 800;
+  color: #18345e;
+}
+
+.hero-title span {
+  color: #f43f5e;
+}
+
+.hero-text {
+  max-width: 920px;
+  margin: 34px auto 0;
+  font-size: 25px;
+  line-height: 1.55;
+  color: #617387;
+}
+
+.hero-buttons {
+  margin-top: 56px;
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  min-width: 290px;
+  text-align: center;
+  padding: 22px 34px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 23px;
+  transition: transform 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: #ff1f5d;
+  color: #ffffff;
+  box-shadow: 0 12px 24px rgba(255, 31, 93, 0.22);
+}
+
+.btn-secondary {
+  background: #fffafb;
+  color: #ff4a72;
+  border: 2px solid #f7b6c2;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+}
+
+/* CARDS */
+.cards-section {
+  padding: 70px 32px 40px;
+}
+
+.card {
+  /* max-width: 1380px; */
+  margin: 0 auto 38px;
+  background: #ffffff;
+  border-radius: 34px;
+  padding: 42px 38px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+  margin: 0 0 20px;
+  font-size: 34px;
+  color: #ff315e;
+  font-weight: 700;
+}
+
+.card p {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.65;
+  color: #697a8c;
+}
+
+.card-img {
+  width: 100%;
+  /* height: 180px; */
+  object-fit: cover;
+  /* border-radius: 20px; */
+  /* margin-bottom: 15px; */
+}
+
+/* LETTER */
+.letter-section {
+  padding: 120px 32px 60px;
+}
+
+.letter-box {
+  max-width: 1380px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 34px;
+  padding: 56px 48px 66px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.letter-box h2 {
+  margin: 0 0 34px;
+  font-size: 42px;
+  color: #ff315e;
+  font-weight: 800;
+}
+
+.letter-box p {
+  max-width: 1180px;
+  margin: 0 auto;
+  font-size: 28px;
+  line-height: 1.8;
+  color: #4f6783;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .hero {
+    padding: 70px 20px 85px;
+  }
+
+  .tagline {
+    font-size: 13px;
+    letter-spacing: 5px;
+    margin-bottom: 24px;
+  }
+
+  .hero-title {
+    font-size: 44px;
+  }
+
+  .hero-text {
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 700px;
+    margin-top: 24px;
+  }
+
+  .hero-buttons {
+    margin-top: 38px;
+    gap: 16px;
+  }
+
+  .btn {
+    min-width: 0;
+    width: 100%;
+    max-width: 290px;
+    font-size: 17px;
+    padding: 18px 22px;
+  }
+
+  .cards-section {
+    padding: 46px 16px 10px;
+  }
+
+  .card {
+    padding: 28px 22px;
+    border-radius: 26px;
+    margin-bottom: 26px;
+  }
+
+  .card h2 {
+    font-size: 24px;
+    margin-bottom: 14px;
+  }
+
+  .card p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .letter-section {
+    padding: 74px 16px 40px;
+  }
+
+  .letter-box {
+    padding: 34px 24px 42px;
+    border-radius: 26px;
+  }
+
+  .letter-box h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+
+  .letter-box p {
+    font-size: 18px;
+    line-height: 1.8;
+  }
+}
