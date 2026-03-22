@@ -50,3 +50,21 @@ function showSurpriseMessage() {
     surpriseMessage.classList.remove("show");
   }, 2500);
 }
+
+// Trigger celebration when birthday section comes into view
+const birthdaySection = document.getElementById("birthday");
+
+let hasTriggeredOnScroll = false;
+
+window.addEventListener("scroll", () => {
+  const rect = birthdaySection.getBoundingClientRect();
+
+  if (rect.top < window.innerHeight * 0.6 && rect.bottom > 0) {
+    if (!hasTriggeredOnScroll) {
+      startCelebration();
+      hasTriggeredOnScroll = true;
+    }
+  } else {
+    hasTriggeredOnScroll = false; // reset when out of view
+  }
+});
