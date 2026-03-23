@@ -1,11 +1,45 @@
 const surpriseBtn = document.getElementById("surpriseBtn");
 const celebrationLayer = document.getElementById("celebration-layer");
 const surpriseMessage = document.getElementById("surprise-message");
+const scrollTopBtn = document.getElementById("scrollTopBtn");
 
-surpriseBtn.addEventListener("click", function () {
-  setTimeout(() => {
-    startCelebration();
-  }, 300);
+const sectionButtons = document.querySelectorAll(".section-btn");
+const allSections = document.querySelectorAll(
+  ".letter-section, .cards-section, .timeline-section, .memories-section, .birthday-section"
+);
+
+sectionButtons.forEach((button) => {
+  button.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const targetId = this.dataset.section;
+    const targetSection = document.getElementById(targetId);
+
+    allSections.forEach((section) => {
+      section.classList.remove("active-section");
+    });
+
+    sectionButtons.forEach((btn) => {
+      btn.classList.remove("active-btn");
+    });
+
+    if (targetSection) {
+      targetSection.classList.add("active-section");
+      this.classList.add("active-btn");
+
+      targetSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+
+
+    if (targetId === "birthday") {
+      setTimeout(() => {
+        startCelebration();
+      }, 300);
+    }
+  });
 });
 
 function startCelebration() {
@@ -51,20 +85,28 @@ function showSurpriseMessage() {
   }, 2500);
 }
 
-// Trigger celebration when birthday section comes into view
-const birthdaySection = document.getElementById("birthday");
-
-let hasTriggeredOnScroll = false;
-
-window.addEventListener("scroll", () => {
-  const rect = birthdaySection.getBoundingClientRect();
-
-  if (rect.top < window.innerHeight * 0.6 && rect.bottom > 0) {
-    if (!hasTriggeredOnScroll) {
-      startCelebration();
-      hasTriggeredOnScroll = true;
-    }
-  } else {
-    hasTriggeredOnScroll = false; // reset when out of view
-  }
+// Scroll to top
+scrollTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 });
+
+// // Trigger celebration when birthday section comes into view
+// const birthdaySection = document.getElementById("birthday");
+
+// let hasTriggeredOnScroll = false;
+
+// window.addEventListener("scroll", () => {
+//   const rect = birthdaySection.getBoundingClientRect();
+
+//   if (rect.top < window.innerHeight * 0.6 && rect.bottom > 0) {
+//     if (!hasTriggeredOnScroll) {
+//       startCelebration();
+//       hasTriggeredOnScroll = true;
+//     }
+//   } else {
+//     hasTriggeredOnScroll = false; // reset when out of view
+//   }
+// });
