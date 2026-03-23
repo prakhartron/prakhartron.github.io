@@ -93,6 +93,17 @@ scrollTopBtn.addEventListener("click", () => {
   });
 });
 
+// Music autoplay on page load (may be blocked by browsers until user interaction)
+window.addEventListener("load", () => {
+  const bgMusic = document.getElementById("bgMusic");
+
+  if (bgMusic) {
+    bgMusic.play().catch(() => {
+      console.log("Autoplay blocked by browser until user interacts.");
+    });
+  }
+});
+
 // // Trigger celebration when birthday section comes into view
 // const birthdaySection = document.getElementById("birthday");
 
