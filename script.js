@@ -97,11 +97,16 @@ scrollTopBtn.addEventListener("click", () => {
 window.addEventListener("load", () => {
   const bgMusic = document.getElementById("bgMusic");
 
-  if (bgMusic) {
-    bgMusic.play().catch(() => {
-      console.log("Autoplay blocked by browser until user interacts.");
-    });
-  }
+  if (!bgMusic) return;
+
+  bgMusic.play().catch(() => {
+    const startMusic = () => {
+      bgMusic.play();
+      document.removeEventListener("click", startMusic);
+    };
+
+    document.addEventListener("click", startMusic);
+  });
 });
 
 // // Trigger celebration when birthday section comes into view
